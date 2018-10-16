@@ -1,7 +1,9 @@
 const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+	mode: 'production',   //暂时指定为生产环境
 	entry: './src/main.js',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -16,6 +18,7 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new VueLoaderPlugin()	//解析vue文件模板的插件
+		new VueLoaderPlugin(),	//解析vue文件模板的插件
+		new HtmlWebpackPlugin({title: 'My vue-cli'})
 	]
 };
