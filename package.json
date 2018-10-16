@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/LKingTo/wp-vueCli#readme",
   "devDependencies": {
+    "css-loader": "^1.0.0",
+    "vue": "^2.5.17",
+    "vue-loader": "^15.4.2",
+    "vue-template-compiler": "^2.5.17",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2"
   }
