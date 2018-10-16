@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/LKingTo/wp-vueCli/issues"
   },
-  "homepage": "https://github.com/LKingTo/wp-vueCli#readme"
+  "homepage": "https://github.com/LKingTo/wp-vueCli#readme",
+  "devDependencies": {
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  }
 }
