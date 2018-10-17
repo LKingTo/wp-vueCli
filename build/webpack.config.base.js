@@ -15,7 +15,7 @@ module.exports = {
 			{
 				test: /\.(jpg|jpeg|png|gif|svg)$/,
 				use: [{
-					loader: 'file-loader', 	//用file-loader，不要用url-loader
+					loader: 'url-loader',
 					options: {
 						limit: 2048,
 						name: 'assets/images/[name].[hash:16].[ext]'

@@ -25,6 +25,7 @@ const config = merge(baseConfig, {
 				test: /\.css$/,
 				use: ExtractTextPlugin.extract({
 					fallback: 'vue-style-loader',
+					publicPath: '../../',		//设置公共路径
 					use: [
 						'css-loader',
 						{
