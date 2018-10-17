@@ -1,6 +1,7 @@
 <template>
-	<div class="box trans">
-		{{text}}
+	<div>
+		<div class="box logo trans"></div>
+		<div class="title">{{text}}</div>
 	</div>
 </template>
 
@@ -19,10 +20,18 @@
 		margin: 50px auto;
 		width: 150px;
 		height: 150px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+	}
+
+	.logo {
+		background: url("assets/images/logo.jpeg") no-repeat;
+		background-size: 150px 150px;
+	}
+
+	.title {
+		margin: auto;
+		width: 150px;
 		background: aquamarine;
+		text-align: center;
 		color: coral;
 	}
 
