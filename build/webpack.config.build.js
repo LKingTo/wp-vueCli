@@ -57,14 +57,22 @@ const config = merge(baseConfig, {
 	optimization: {
 		//todo 按需分离、runtimeChunk意义
 		splitChunks: {
-			chunks: "initial",
-			minChunks: 2,
+			chunks: "initial",	//initial(初始块)、async(按需加载块)、all(默认，全部块)
+			minChunks: 1,
 			cacheGroups: {
+				/* 库文件 */
 				vendor: {
-					// test: /node_modules/,  //这里虽然分离了,但是没有做到按需引入,看官方配置也不是很明白
+					test: /node_modules/,
 					name: 'vendor',
+					priority: 10,		//缓存组优先级
 					chunks: 'initial',
-					minChunks: 2
+					enforce: true		//优先处理
+				},
+				/* 定义分离前被引用过两次的文件 */
+				common: {
+					name: 'common',
+					minChunks: 2,
+					minSize: 20000		//最小20kb
 				}
 			}
 		},
