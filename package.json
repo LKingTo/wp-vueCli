@@ -17,6 +17,9 @@
     "url": "https://github.com/LKingTo/wp-vueCli/issues"
   },
   "homepage": "https://github.com/LKingTo/wp-vueCli#readme",
+  "dependencies": {
+    "vue": "^2.5.17"
+  },
   "devDependencies": {
     "autoprefixer": "^9.2.1",
     "clean-webpack-plugin": "^0.1.19",
@@ -26,7 +29,6 @@
     "html-webpack-plugin": "^3.2.0",
     "postcss-loader": "^3.0.0",
     "url-loader": "^1.1.2",
-    "vue": "^2.5.17",
     "vue-loader": "^15.4.2",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.5.17",

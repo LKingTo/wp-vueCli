@@ -9,7 +9,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 const config = merge(baseConfig, {
 	entry: {
-		main: './src/main.js',	//项目代码文件
+		app: './src/main.js',	//项目代码文件
 		vendor: [	//此处配置分离的库文件
 			'vue'
 		]

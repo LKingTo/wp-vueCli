@@ -18,7 +18,7 @@ module.exports = {
 					loader: 'file-loader', 	//用file-loader，不要用url-loader
 					options: {
 						limit: 2048,
-						name: '[path][name].[hash:16].[ext]'
+						name: 'assets/images/[name].[hash:16].[ext]'
 					}
 				}]
 			}
