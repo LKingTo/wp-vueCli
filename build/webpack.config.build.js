@@ -8,6 +8,17 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const config = merge(baseConfig, {
+	entry: {
+		main: './src/main.js',	//项目代码文件
+		vendor: [	//此处配置分离的库文件
+			'vue'
+		]
+	},
+	output: {
+		path: path.resolve(__dirname, '../dist'),
+		filename: 'js/[name].[chunkhash].js',
+		chunkFilename: 'js/[name].[chunkhash].js',	//非entry的文件
+	},
 	module: {
 		rules: [
 			{
@@ -35,7 +46,23 @@ const config = merge(baseConfig, {
 		new VueLoaderPlugin(),	//解析vue文件模板的插件
 		new HtmlWebpackPlugin({title: 'My vue-cli'}),
 		new BundleAnalyzerPlugin()		//打包分析插件
-	]
+	],
+	optimization: {
+		//todo 按需分离、runtimeChunk意义
+		splitChunks: {
+			chunks: "initial",
+			minChunks: 2,
+			cacheGroups: {
+				vendor: {
+					// test: /node_modules/,  //这里虽然分离了,但是没有做到按需引入,看官方配置也不是很明白
+					name: 'vendor',
+					chunks: 'initial',
+					minChunks: 2
+				}
+			}
+		},
+		// runtimeChunk: true
+	}
 });
 
 module.exports = config;
